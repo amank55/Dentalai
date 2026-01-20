@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 const page = () => {
   return (
-    <Button>Click Me</Button>
+   <Button>Click me</Button>
   )
 }
 export default page
