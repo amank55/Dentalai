@@ -7,13 +7,13 @@ function Hero() {
   return (
     <section className="relative h-screen flex items-center overflow-hidden pt-20">
       {/* GRID BG  */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/5 to-primary/5">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-20"></div>
+      <div className="absolute inset-0 bg-linear-to-br from-background via-muted/5 to-primary/5">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-20"></div>
       </div>
 
       {/* GRADIENT ORBS */}
-      <div className="absolute top-20 left-1/4 w-72 h-72 bg-gradient-to-r from-primary/20 to-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-gradient-to-r from-primary/15 to-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-1/4 w-72 h-72 bg-linear-to-r from-primary/20 to-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-linear-to-r from-primary/15 to-primary/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 w-full px-6">
         <div className="max-w-7xl mx-auto">
@@ -22,24 +22,24 @@ function Hero() {
             <div className="space-y-10">
               <div className="space-y-6">
                 {/* BADGE */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 to-primary/5 rounded-full border border-primary/20 backdrop-blur-sm">
-                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-primary">
-                    AI-Powered Dental Assistant
+                <div className="inline-flex items-center gap-2 px-5 py-3 bg-linear-to-r from-primary/15 to-primary/10 rounded-full border-2 border-primary/30 backdrop-blur-md shadow-lg hover:shadow-xl hover:border-primary/50 transition-all duration-300 hover:scale-105">
+                  <div className="w-2.5 h-2.5 bg-primary rounded-full animate-pulse shadow-lg shadow-primary/50"></div>
+                  <span className="text-sm font-semibold text-primary tracking-wide">
+                    ✨ AI-Powered Dental Assistant
                   </span>
                 </div>
 
                 {/* MAIN HEADING */}
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                  <span className="bg-gradient-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
+                  <span className="bg-linear-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
                     Your dental
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                  <span className="bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                     questions
                   </span>
                   <br />
-                  <span className="bg-gradient-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
+                  <span className="bg-linear-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
                     answered instantly
                   </span>
                 </h1>
@@ -52,16 +52,16 @@ function Hero() {
               </div>
 
               {/* CTA BUTTONS */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <SignUpButton mode="modal">
-                  <Button size={"lg"}>
+                  <Button size={"lg"} className="shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold">
                     <MicIcon className="mr-2 size-5" />
                     Try voice agent
                   </Button>
                 </SignUpButton>
 
                 <SignUpButton mode="modal">
-                  <Button size={"lg"} variant={"outline"}>
+                  <Button size={"lg"} variant={"outline"} className="shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold border-primary/30 hover:border-primary/60">
                     <CalendarIcon className="mr-2 size-5" />
                     Book appointment
                   </Button>
@@ -131,18 +131,23 @@ function Hero() {
 
             {/* RIGHT CONTENT - HERO IMAGE */}
 
-            <div className="relative lg:pl-8">
+            <div className="relative lg:pl-8 h-full flex items-center justify-center">
               {/* GRADIENT ORBS */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl rotate-45 blur-xl"></div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-primary/15 to-primary/5 rounded-full blur-2xl"></div>
+              <div className="absolute -top-4 -left-4 w-24 h-24 bg-linear-to-br from-primary/30 to-primary/15 rounded-2xl rotate-45 blur-2xl animate-pulse"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-linear-to-br from-primary/20 to-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "0.5s" }}></div>
 
-              <Image
-                src={"/hero.png"}
-                alt="DentWise AI"
-                width={600}
-                height={600}
-                className="w-full h-auto"
-              />
+              {/* IMAGE CONTAINER */}
+              <div className="relative w-full h-auto">
+                <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-primary/5 rounded-3xl blur-2xl scale-105"></div>
+                <Image
+                  src={"/hero.png"}
+                  alt="DentWise AI - Your dental assistant"
+                  width={600}
+                  height={600}
+                  priority
+                  className="w-full h-auto relative z-10 rounded-2xl shadow-2xl drop-shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </div>
           </div>
         </div>
