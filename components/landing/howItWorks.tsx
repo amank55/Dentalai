@@ -8,7 +8,8 @@ const HowItWorks = () => {
        <div className=" text-sm font-semibold text-primary tracking-wide items-center">
                  Simple Process
     </div>
-       <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+    </div>
+       <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight mt-3">
           <span className="bg-linear-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
             Three steps to
           </span>
@@ -22,7 +23,7 @@ const HowItWorks = () => {
           Our streamlined process makes dental care accessible, convenient, and stress-free for
           everyone
         </p>
-      </div>
+      
    </section>
    
   )
