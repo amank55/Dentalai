@@ -1,3 +1,4 @@
+import CTA from "@/components/landing/CTA"
 import Footer from "@/components/landing/Footer"
 import Header from "@/components/landing/header"
 import Hero from "@/components/landing/hero"
@@ -14,6 +15,7 @@ const page = () => {
     <HowItWorks/>
     <WhatToAsk/>
     <PricingSection/>
+    <CTA/>
     <Footer/>
     </>
   )
