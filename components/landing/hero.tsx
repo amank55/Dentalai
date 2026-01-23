@@ -5,25 +5,25 @@ import Image from "next/image";
 
 function Hero() {
   return (
-    <section className="relative h-screen flex items-center overflow-hidden pt-20">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* GRID BG  */}
-      <div className="absolute inset-0 bg-linear-to-br from-background via-muted/5 to-primary/5">
+      <div className="absolute inset-0 bg-linear-to-br from-background via-muted/5 to-primary/5 z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-20"></div>
       </div>
 
       {/* GRADIENT ORBS */}
-      <div className="absolute top-20 left-1/4 w-72 h-72 bg-linear-to-r from-primary/20 to-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-linear-to-r from-primary/15 to-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-1/4 w-72 h-72 bg-linear-to-r from-primary/20 to-primary/10 rounded-full blur-3xl opacity-60 z-0" />
+      <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-linear-to-r from-primary/15 to-primary/5 rounded-full blur-3xl opacity-60 z-0" />
 
-      <div className="relative z-10 w-full px-6">
+      <div className="relative z-10 w-full px-6 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* LEFT CONTENT */}
             <div className="space-y-10">
               <div className="space-y-6">
                 {/* BADGE */}
-                <div className="inline-flex items-center gap-2 px-5 py-3 bg-linear-to-r from-primary/15 to-primary/10 rounded-full border-2 border-primary/30 backdrop-blur-md shadow-lg hover:shadow-xl hover:border-primary/50 transition-all duration-300 hover:scale-105">
-                  <div className="w-2.5 h-2.5 bg-primary rounded-full animate-pulse shadow-lg shadow-primary/50"></div>
+                <div className="inline-flex items-center gap-2 px-5 py-2 bg-linear-to-r from-primary/15 to-primary/10 rounded-full mt-4 border-2 border-primary/30 backdrop-blur-md shadow-lg hover:shadow-xl hover:border-primary/50 transition-all duration-300 hover:scale-105">
+                  <div className="w-2.5 h-2.5 bg-primary rounded-full animate-pulse shadow-lg shadow-primary/50 "></div>
                   <span className="text-sm font-semibold text-primary tracking-wide">
                     ✨ AI-Powered Dental Assistant
                   </span>
@@ -78,35 +78,35 @@ function Hero() {
                       alt="Jessica Davis"
                       width={48}
                       height={48}
-                      className="w-12 h-12 rounded-full object-cover ring-4 ring-background"
+                      className="w-12 h-12 rounded-full object-cover ring-4 ring-background flex-shrink-0"
                     />
                     <Image
                       src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
                       alt="Sam Miller"
                       width={48}
                       height={48}
-                      className="w-12 h-12 rounded-full object-cover ring-4 ring-background"
+                      className="w-12 h-12 rounded-full object-cover ring-4 ring-background flex-shrink-0"
                     />
                     <Image
                       src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face"
                       alt="Anna Lopez"
                       width={48}
                       height={48}
-                      className="w-12 h-12 rounded-full object-cover ring-4 ring-background"
+                      className="w-12 h-12 rounded-full object-cover ring-4 ring-background flex-shrink-0"
                     />
                     <Image
                       src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&h=100&fit=crop&crop=face"
                       alt="Mike Rodriguez"
                       width={48}
                       height={48}
-                      className="w-12 h-12 rounded-full object-cover ring-4 ring-background"
+                      className="w-12 h-12 rounded-full object-cover ring-4 ring-background flex-shrink-0"
                     />
                     <Image
                       src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=100&h=100&fit=crop&crop=face"
                       alt="Katie Lee"
                       width={48}
                       height={48}
-                      className="w-12 h-12 rounded-full object-cover ring-4 ring-background"
+                      className="w-12 h-12 rounded-full object-cover ring-4 ring-background flex-shrink-0"
                     />
                   </div>
 
@@ -130,14 +130,13 @@ function Hero() {
             </div>
 
             {/* RIGHT CONTENT - HERO IMAGE */}
-
-            <div className="relative lg:pl-8 h-full flex items-center justify-center">
+            <div className="relative lg:pl-8 w-full h-auto flex items-center justify-center">
               {/* GRADIENT ORBS */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-linear-to-br from-primary/30 to-primary/15 rounded-2xl rotate-45 blur-2xl animate-pulse"></div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-linear-to-br from-primary/20 to-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "0.5s" }}></div>
+              <div className="absolute -top-4 -left-4 w-24 h-24 bg-linear-to-br from-primary/30 to-primary/15 rounded-2xl rotate-45 blur-2xl animate-pulse z-0"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-linear-to-br from-primary/20 to-primary/10 rounded-full blur-3xl animate-pulse z-0" style={{ animationDelay: "0.5s" }}></div>
 
               {/* IMAGE CONTAINER */}
-              <div className="relative w-full h-auto">
+              <div className="relative w-full max-w-md lg:max-w-xl h-auto z-10">
                 <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-primary/5 rounded-3xl blur-2xl scale-105"></div>
                 <Image
                   src={"/hero.png"}
