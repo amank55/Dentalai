@@ -1,9 +1,12 @@
 import Navbar from "@/components/Navbar"
 const AdminDashboardClient = () => {
   return (
-   <div className="min-h-screen bg-background">
-     <Navbar/>
-   </div>
+   <>
+    <Navbar/>
+    <div className="pt-16 min-h-screen bg-background">
+
+    </div>
+   </>
   )
 }
 export default AdminDashboardClient
