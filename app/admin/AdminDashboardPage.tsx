@@ -4,7 +4,7 @@ import { useGetAppointments } from "@/hooks/use-appointment";
 import { useGetDoctors } from "@/hooks/use-doctor";
 import { useUser } from "@clerk/nextjs";
 import { Settings as SettingsIcon } from "lucide-react"
-
+import AdminStats from "@/components/admin/AdminStats";
 
 const AdminDashboardClient = () => {
     const { user } = useUser();
@@ -46,7 +46,7 @@ const AdminDashboardClient = () => {
             </div>
           </div>
           <AdminStats
-          totoalDoctors= {stats.totalDoctors}
+          totalDoctors= {stats.totalDoctors}
           activeDoctors= {stats.activeDoctors}
           totalAppointments= {stats.totalAppointments}
           completedAppointments= {stats.completedAppointments}/>
