@@ -1,11 +1,23 @@
 "use client"
 import Navbar from "@/components/Navbar"
+import { useGetAppointments } from "@/hooks/use-appointment";
+import { useGetDoctors } from "@/hooks/use-doctor";
 import { useUser } from "@clerk/nextjs";
 import { Settings as SettingsIcon } from "lucide-react"
 
 
 const AdminDashboardClient = () => {
     const { user } = useUser();
+    const {data: doctors = [], isLoading: doctorsLoading} = useGetDoctors();
+    const {data: appointments = [], isLoading: appointmentsLoading} = useGetAppointments();
+    console.log({appointments,doctors})
+
+    const stats =  {
+     totalDoctors:  doctors.length,
+     activeDoctors: doctors.filter((doc)=> doc.isActive).length,
+     totalAppointments: appointments.length,
+     completedAppointments: appointments.filter((app)=>app.status==="COMPLETED").length,
+    }
   return (
    <>
     <Navbar/>
