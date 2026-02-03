@@ -18,6 +18,7 @@ const AdminDashboardClient = () => {
      totalAppointments: appointments.length,
      completedAppointments: appointments.filter((app)=>app.status==="COMPLETED").length,
     }
+    if (doctorsLoading || appointmentsLoading) return <p>LOADING!!</p>
   return (
    <>
     <Navbar/>
@@ -44,6 +45,11 @@ const AdminDashboardClient = () => {
               <SettingsIcon className="w-16 h-16 text-primary" />
             </div>
           </div>
+          <AdminStats
+          totoalDoctors= {stats.totalDoctors}
+          activeDoctors= {stats.activeDoctors}
+          totalAppointments= {stats.totalAppointments}
+          completedAppointments= {stats.completedAppointments}/>
         </div>
       </div>
     </>
