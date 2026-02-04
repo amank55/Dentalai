@@ -3,7 +3,6 @@ interface AdminStatsProps{
     activeDoctors : number,
     totalAppointments: number,
     completedAppointments: number,
-
 }
 function  AdminStats ({
     totalDoctors,
