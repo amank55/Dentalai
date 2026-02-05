@@ -13,18 +13,21 @@ export function generateAvatar(name: string, gender: "MALE" | "FEMALE") {
   return `${base}/boy?username=${username}`;
 }
 
-// phone formatting function for US numbers - ai generated 🎉
+// phone formatting function for Indian numbers - ai generated 🎉
 export const formatPhoneNumber = (value: string) => {
   if (!value) return value;
 
   const phoneNumber = value.replace(/[^\d]/g, "");
-  const phoneNumberLength = phoneNumber.length;
-
-  if (phoneNumberLength < 4) return phoneNumber;
-  if (phoneNumberLength < 7) {
-    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+  
+  // Return without spaces or +91 prefix
+  if (phoneNumber.length === 10) {
+    return phoneNumber;
   }
-  return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+  if (phoneNumber.length === 12 && phoneNumber.startsWith("91")) {
+    return phoneNumber.slice(2); // Remove country code
+  }
+  
+  return phoneNumber;
 };
 
 //  ai generated 🎉

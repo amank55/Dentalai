@@ -1,5 +1,8 @@
+"use client"
 import { Calendar, Clock, UserCheck, Users } from "lucide-react"
 import { Card, CardContent } from "../ui/card"
+import AddDoctorDialog from "./AddDoctorDialog"
+import { useState } from "react"
 interface AdminStatsProps{
     totalDoctors : number,
     activeDoctors : number,
@@ -12,6 +15,7 @@ function  AdminStats ({
     totalAppointments,
     completedAppointments
 }: AdminStatsProps)  {
+  const [isAddDialogOpen, setIsAddDialogOpen] = useState(false)
   return (
        <div className="grid md:grid-cols-4 gap-6 mb-12">
       <Card className="border-2 hover:border-primary/30 transition-all duration-300">
@@ -69,6 +73,7 @@ function  AdminStats ({
           </div>
         </CardContent>
       </Card>
+        <AddDoctorDialog isOpen={isAddDialogOpen} onClose={() => setIsAddDialogOpen(false)} />
     </div>  
     
   )
