@@ -45,11 +45,16 @@ const AdminDashboardClient = () => {
               <SettingsIcon className="w-16 h-16 text-primary" />
             </div>
           </div>
+        </div>
+
+        {/* ADMIN STATS SECTION */}
+        <div className="mb-12">
           <AdminStats
-          totalDoctors= {stats.totalDoctors}
-          activeDoctors= {stats.activeDoctors}
-          totalAppointments= {stats.totalAppointments}
-          completedAppointments= {stats.completedAppointments}/>
+            totalDoctors={stats.totalDoctors}
+            activeDoctors={stats.activeDoctors}
+            totalAppointments={stats.totalAppointments}
+            completedAppointments={stats.completedAppointments}
+          />
         </div>
       </div>
     </>
