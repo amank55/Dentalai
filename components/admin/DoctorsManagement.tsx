@@ -61,19 +61,11 @@ function DoctorsManagement() {
                   className="flex items-center justify-between p-4 bg-muted/30 rounded-xl border border-border/50"
                 >
                   <div className="flex items-center gap-4">
-                    <Image
-                      src={doctor.imageUrl || generateAvatar(doctor.name, doctor.gender)}
-                      alt={doctor.name}
-                      width={48}
-                      height={48}
-                      className="size-12 rounded-full object-cover ring-2 ring-background"
-                      onError={(e) => {
-                        const img = e.currentTarget;
-                        if (!img.src.includes('avatar.iran')) {
-                          img.src = generateAvatar(doctor.name, doctor.gender);
-                        }
-                      }}
-                    />
+                    <div className="size-12 rounded-full ring-2 ring-background bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center flex-shrink-0">
+                      <span className="text-sm font-semibold text-primary">
+                        {doctor.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)}
+                      </span>
+                    </div>
 
                     <div>
                       <div className="font-semibold">{doctor.name}</div>
