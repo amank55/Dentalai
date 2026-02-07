@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar"
 import FeaturingCards from "@/components/voice/featuringCards"
+import VapiWidget from "@/components/voice/VapiWidget"
 import { MicIcon } from "lucide-react"
 
 function VoicePage ()  {
@@ -28,6 +29,7 @@ function VoicePage ()  {
         </div>
         <FeaturingCards/>
     </div>
+    <VapiWidget/>
     </>
   )
 }
