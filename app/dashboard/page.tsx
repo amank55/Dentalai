@@ -6,6 +6,7 @@ import { Card, CardContent} from "@/components/ui/card";
 import { CalendarIcon, MessageSquareIcon } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
+import LowerSection from "@/components/dashboard/lowerSection";
 
 
 export default function DashboardPage() {
@@ -127,7 +128,11 @@ export default function DashboardPage() {
         </CardContent>
       </Card>
     </div>
+
+     <LowerSection/>
+     
       </div>
+      
     </>
   );
 }
