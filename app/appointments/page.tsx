@@ -158,29 +158,33 @@ function AppointmentsPage() {
         <div className="mb-8 max-w-7xl mx-auto px-6 py-8">
           <h2 className="text-xl font-semibold mb-4">Your Upcoming Appointments</h2>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {userAppointments.map((appointment) => (
-              <div key={appointment.id} className="bg-card border rounded-lg p-4 shadow-sm">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="size-10 bg-primary/10 rounded-full flex items-center justify-center">
-                    <img
-                      src={appointment.doctorImageUrl}
-                      alt={appointment.doctorName}
-                      className="size-10 rounded-full"
-                    />
+            {userAppointments.map((appointment) => {
+              const initials = appointment.doctorName
+                .split(" ")
+                .map((name: string) => name[0])
+                .join("")
+                .toUpperCase();
+
+              return (
+                <div key={appointment.id} className="bg-card border rounded-lg p-4 shadow-sm">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="size-10 bg-primary rounded-full flex items-center justify-center text-white font-semibold text-sm">
+                      {initials}
+                    </div>
+                    <div>
+                      <p className="font-medium text-sm">{appointment.doctorName}</p>
+                      <p className="text-muted-foreground text-xs">{appointment.reason}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-medium text-sm">{appointment.doctorName}</p>
-                    <p className="text-muted-foreground text-xs">{appointment.reason}</p>
+                  <div className="space-y-1 text-sm">
+                    <p className="text-muted-foreground">
+                      📅 {format(new Date(appointment.date), "MMM d, yyyy")}
+                    </p>
+                    <p className="text-muted-foreground">🕐 {appointment.time}</p>
                   </div>
                 </div>
-                <div className="space-y-1 text-sm">
-                  <p className="text-muted-foreground">
-                    📅 {format(new Date(appointment.date), "MMM d, yyyy")}
-                  </p>
-                  <p className="text-muted-foreground">🕐 {appointment.time}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}
