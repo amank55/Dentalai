@@ -1,16 +1,17 @@
-"use client"
 import Image from "next/image"
 import Navbar from "@/components/Navbar"
-import { useUser } from "@clerk/nextjs"
 import { Card, CardContent} from "@/components/ui/card";
 import { CalendarIcon, MessageSquareIcon } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import LowerSection from "@/components/dashboard/lowerSection";
+import { auth } from "@clerk/nextjs/server";
+import { prisma } from "@/lib/prisma";
 
 
-export default function DashboardPage() {
-  const { user } = useUser();
+export default async function DashboardPage() {
+  const { userId } = await auth();
+  const user = userId ? await prisma.user.findUnique({ where: { clerkId: userId } }) : null;
 
   return (
     <>
@@ -30,7 +31,7 @@ export default function DashboardPage() {
                   : new Date().getHours() < 18
                   ? "afternoon"
                   : "evening"}
-                , {user?.firstName}!
+                , {user?.firstName || "Guest"}!
               </h1>
               <p className="text-muted-foreground">
                 Your personal AI dental assistant is ready to help you maintain perfect oral health.
