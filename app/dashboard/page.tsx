@@ -130,7 +130,9 @@ export default async function DashboardPage() {
       </Card>
     </div>
 
-     <LowerSection/>
+     <div className="grid lg:grid-cols-3 gap-6">
+       <LowerSection/>
+     </div>
      
       </div>
       

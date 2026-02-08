@@ -13,7 +13,7 @@ async function LowerSection() {
   
   return (
    <>
-     <Card  className="lg:col-span-2">
+     <Card className="lg:col-span-2">
       <CardHeader>
         <CardTitle className="flex items-center gap-2 pl-4">
             <BrainIcon className="size-5 text-primary"/>
