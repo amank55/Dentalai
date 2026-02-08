@@ -7,6 +7,7 @@ import Link from "next/link";
 import LowerSection from "@/components/dashboard/lowerSection";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
+import RightSection from "@/components/dashboard/rightSection";
 
 
 export default async function DashboardPage() {
@@ -132,6 +133,8 @@ export default async function DashboardPage() {
 
      <div className="grid lg:grid-cols-3 gap-6">
        <LowerSection/>
+       <RightSection/>
+       
      </div>
      
       </div>
