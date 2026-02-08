@@ -8,6 +8,7 @@ import LowerSection from "@/components/dashboard/lowerSection";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import RightSection from "@/components/dashboard/rightSection";
+import WelcomeSection from "@/components/dashboard/welcomeSection";
 
 
 export default async function DashboardPage() {
