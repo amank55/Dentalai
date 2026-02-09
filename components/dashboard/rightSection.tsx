@@ -5,7 +5,8 @@ import { UserIcon, ClockIcon, } from "lucide-react";
 import { parseISO, isSameDay, isAfter, format } from "date-fns";
 
 async function RightSection() {
- const appointments = await getUserAppointments();
+  try {
+    const appointments = await getUserAppointments();
 
   // filter for upcoming CONFIRMED appointments only (today or future)
   const upcomingAppointments =
@@ -92,5 +93,9 @@ async function RightSection() {
       </CardContent>
     </Card>
   );
+  } catch (error) {
+    console.error("RightSection error:", error);
+    return null; // silently fail if appointments can't be fetched
+  }
 }
 export default RightSection

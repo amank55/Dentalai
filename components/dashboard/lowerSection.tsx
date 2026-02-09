@@ -7,9 +7,10 @@ import { prisma } from "@/lib/prisma"
 import { Button } from "../ui/button"
 import Link from "next/link"
 async function LowerSection() {
-  const appointmentStats = await getUserAppointmentStats();
-  const { userId } = await auth();
-  const user = userId ? await prisma.user.findUnique({ where: { clerkId: userId } }) : null;
+  try {
+    const appointmentStats = await getUserAppointmentStats();
+    const { userId } = await auth();
+    const user = userId ? await prisma.user.findUnique({ where: { clerkId: userId } }) : null;
   
   return (
    <>
@@ -73,5 +74,9 @@ async function LowerSection() {
     </Card>
    </>
   );
+  } catch (error) {
+    console.error("LowerSection error:", error);
+    return null; // silently fail if data can't be fetched
+  }
 }
 export default LowerSection
