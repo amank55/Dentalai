@@ -54,28 +54,23 @@ function AppointmentConfirmationEmail({
           </Text>
 
           <Section style={appointmentDetails}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-              <div>
-                <Text style={detailLabel}>Doctor</Text>
-                <Text style={detailValue}>{doctorName}</Text>
+            <Text style={detailLabel}>Doctor</Text>
+            <Text style={detailValue}>{doctorName}</Text>
 
-                <Text style={detailLabel}>Appointment Type</Text>
-                <Text style={detailValue}>{appointmentType}</Text>
+            <Text style={detailLabel}>Appointment Type</Text>
+            <Text style={detailValue}>{appointmentType}</Text>
 
-                <Text style={detailLabel}>Date</Text>
-                <Text style={detailValue}>{appointmentDate}</Text>
-              </div>
-              <div>
-                <Text style={detailLabel}>Time</Text>
-                <Text style={detailValue}>{appointmentTime}</Text>
+            <Text style={detailLabel}>Date</Text>
+            <Text style={detailValue}>{appointmentDate}</Text>
 
-                <Text style={detailLabel}>Duration</Text>
-                <Text style={detailValue}>{duration}</Text>
+            <Text style={detailLabel}>Time</Text>
+            <Text style={detailValue}>{appointmentTime}</Text>
 
-                <Text style={detailLabel}>Cost</Text>
-                <Text style={detailValue}>{price}</Text>
-              </div>
-            </div>
+            <Text style={detailLabel}>Duration</Text>
+            <Text style={detailValue}>{duration}</Text>
+
+            <Text style={detailLabel}>Cost</Text>
+            <Text style={detailValue}>{price}</Text>
           </Section>
 
           <Text style={text}>
