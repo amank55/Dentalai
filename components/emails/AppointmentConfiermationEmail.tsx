@@ -15,18 +15,18 @@ interface AppointmentConfirmationEmailProps {
   doctorName: string;
   appointmentDate: string;
   appointmentTime: string;
-  appointmentType: string;
-  duration: string;
-  price: string;
+  appointmentType?: string;
+  duration?: string;
+  price?: string;
 }
 
 function AppointmentConfirmationEmail({
   doctorName,
   appointmentDate,
   appointmentTime,
-  appointmentType,
-  duration,
-  price,
+  appointmentType = "General Checkup",
+  duration = "30 minutes",
+  price = "To be confirmed",
 }: AppointmentConfirmationEmailProps) {
   return (
     <Html>
@@ -54,26 +54,28 @@ function AppointmentConfirmationEmail({
           </Text>
 
           <Section style={appointmentDetails}>
-            <Text style={detailLabel}>Doctor</Text>
-            <Text style={detailValue}>{doctorName}</Text>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              <div>
+                <Text style={detailLabel}>Doctor</Text>
+                <Text style={detailValue}>{doctorName}</Text>
 
-            <Text style={detailLabel}>Appointment Type</Text>
-            <Text style={detailValue}>{appointmentType}</Text>
+                <Text style={detailLabel}>Appointment Type</Text>
+                <Text style={detailValue}>{appointmentType}</Text>
 
-            <Text style={detailLabel}>Date</Text>
-            <Text style={detailValue}>{appointmentDate}</Text>
+                <Text style={detailLabel}>Date</Text>
+                <Text style={detailValue}>{appointmentDate}</Text>
+              </div>
+              <div>
+                <Text style={detailLabel}>Time</Text>
+                <Text style={detailValue}>{appointmentTime}</Text>
 
-            <Text style={detailLabel}>Time</Text>
-            <Text style={detailValue}>{appointmentTime}</Text>
+                <Text style={detailLabel}>Duration</Text>
+                <Text style={detailValue}>{duration}</Text>
 
-            <Text style={detailLabel}>Duration</Text>
-            <Text style={detailValue}>{duration}</Text>
-
-            <Text style={detailLabel}>Cost</Text>
-            <Text style={detailValue}>{price}</Text>
-
-            <Text style={detailLabel}>Location</Text>
-            <Text style={detailValue}>Dental Center</Text>
+                <Text style={detailLabel}>Cost</Text>
+                <Text style={detailValue}>{price}</Text>
+              </div>
+            </div>
           </Section>
 
           <Text style={text}>
@@ -82,7 +84,7 @@ function AppointmentConfirmationEmail({
           </Text>
 
           <Section style={buttonContainer}>
-            <Link style={button} href={process.env.NEXT_PUBLIC_APP_URL + "/appointments"}>
+            <Link style={button} href={"http://localhost:3000/appointments"}>
               View My Appointments
             </Link>
           </Section>

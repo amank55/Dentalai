@@ -28,38 +28,38 @@ export function AppointmentConfirmationModal({
 }: AppointmentConfirmationModalProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader className="text-center space-y-4">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-            <CheckCircleIcon className="h-8 w-8 text-primary" />
+      <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
+        <DialogHeader className="text-center space-y-3">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
+            <CheckCircleIcon className="h-7 w-7 text-green-600 dark:text-green-400" />
           </div>
 
-          <DialogTitle className="text-xl font-semibold text-center">
+          <DialogTitle className="text-2xl font-bold text-center">
             Appointment Confirmed!
           </DialogTitle>
 
-          <DialogDescription className="text-center text-muted-foreground">
+          <DialogDescription className="text-center text-muted-foreground text-sm">
             Your appointment has been successfully booked
           </DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-6">
+        <div className="space-y-4 py-1">
           {/* Email Notification Section */}
-          <div className="flex flex-col items-center space-y-3">
+          <div className="flex flex-col items-center space-y-2 bg-blue-50 dark:bg-blue-950/20 rounded-lg p-4">
             <div className="relative">
               <Image
                 src="/email-sent.png"
                 alt="Email sent"
-                width={120}
-                height={120}
-                className="mx-auto"
+                width={80}
+                height={80}
+                className="mx-auto w-20 h-20 object-contain"
               />
             </div>
 
             <div className="text-center space-y-1">
-              <div className="flex items-center justify-center gap-2 text-sm font-medium text-primary">
+              <div className="flex items-center justify-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400">
                 <MailIcon className="h-4 w-4" />
-                Details sent to your inbox
+                <span>Details sent to your inbox</span>
               </div>
               {appointmentDetails?.userEmail && (
                 <p className="text-xs text-muted-foreground">{appointmentDetails.userEmail}</p>
@@ -69,22 +69,22 @@ export function AppointmentConfirmationModal({
 
           {/* Appointment Summary */}
           {appointmentDetails && (
-            <div className="bg-muted/30 rounded-lg p-4 space-y-3">
-              <h4 className="font-medium text-sm text-center mb-3">Quick Summary</h4>
+            <div className="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 space-y-3">
+              <h4 className="font-semibold text-sm text-center">Quick Summary</h4>
 
               <div className="space-y-2">
                 <div className="flex items-center gap-3 text-sm">
-                  <UserIcon className="h-4 w-4 text-muted-foreground" />
+                  <UserIcon className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                   <span className="font-medium">{appointmentDetails.doctorName}</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-sm">
-                  <CalendarIcon className="h-4 w-4 text-muted-foreground" />
+                  <CalendarIcon className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                   <span>{appointmentDetails.appointmentDate}</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-sm">
-                  <ClockIcon className="h-4 w-4 text-muted-foreground" />
+                  <ClockIcon className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                   <span>{appointmentDetails.appointmentTime}</span>
                 </div>
               </div>
@@ -92,7 +92,7 @@ export function AppointmentConfirmationModal({
           )}
 
           {/* Action Buttons */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2 pt-1">
             <Link href="/appointments" className="w-full">
               <Button className="w-full" onClick={() => onOpenChange(false)}>
                 View My Appointments
@@ -105,11 +105,11 @@ export function AppointmentConfirmationModal({
           </div>
 
           {/* Additional Info */}
-          <div className="text-center text-xs text-muted-foreground border-t pt-4">
+          <div className="text-center text-xs text-muted-foreground bg-amber-50 dark:bg-amber-950/20 rounded-lg p-3">
             <p>
-              Please arrive 15 minutes early for your appointment.
+              Please arrive 15 minutes early.
               <br />
-              Need to reschedule? Contact us 24 hours in advance.
+              Contact us to reschedule 24 hours in advance.
             </p>
           </div>
         </div>
